@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Четыре школы полного привода</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <main class="presentation">
+
+    <!-- Сцена презентации -->
+    <div class="presentation__stage">
+      <div class="presentation__scene" id="scene">
+
+        <!-- СЛАЙД 1 : ОБЛОЖКА -->
+        <section class="slide slide--cover slide--active" data-slide-id="cover" aria-label="Слайд 1: Четыре школы полного привода">
+          <div class="slide__background" role="presentation"></div>
+          <header class="slide__cover-content">
+            <p class="slide__kicker">Джипы и кроссоверы · 1995–2007</p>
+            <h1 class="slide__title">Четыре школы полного привода</h1>
+            <p class="slide__sub">Япония · Корея · Америка · Германия — как каждая страна делила момент между колёсами</p>
+            <aside class="slide__cover-meta" aria-label="Школы полного привода">
+              <span class="chip chip--japan">Япония</span>
+              <span class="chip chip--korea">Корея</span>
+              <span class="chip chip--america">Америка</span>
+              <span class="chip chip--germany">Германия</span>
+            </aside>
+          </header>
+          <footer class="slide__number">01 / 10</footer>
+        </section>
+
+        <!-- СЛАЙД 2 : ОБЩЕЕ -->
+        <section class="slide" data-slide-id="common" aria-label="Слайд 2: Одна задача — четыре решения">
+          <header class="slide__header">
+            <p class="slide__kicker">Общее</p>
+            <h2 class="slide__title">Одна задача — четыре решения</h2>
+            <p class="slide__sub">Как ни различаются школы, фундамент у всех один. Разница — в том, кому и когда отдать момент.</p>
+          </header>
+          <div class="slide__grid">
+            <div class="points">
+              <article class="point">
+                <span class="point__index">01</span>
+                <div class="point__text">
+                  <h3 class="point__title">Тяга на все четыре колеса</h3>
+                  <p class="point__desc">И на асфальте, и в грязи — цель одна: использовать сцепление всех колёс.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">02</span>
+                <div class="point__text">
+                  <h3 class="point__title">Один базовый набор</h3>
+                  <p class="point__desc">Раздаточная коробка, межосевой узел, блокировки. Набор общий — компоновка разная.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">03</span>
+                <div class="point__text">
+                  <h3 class="point__title">Главный вопрос</h3>
+                  <p class="point__desc">Как поделить момент между осями и колёсами — и кто решает: водитель или электроника.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">04</span>
+                <div class="point__text">
+                  <h3 class="point__title">Общий вектор эпохи</h3>
+                  <p class="point__desc">От механики и рычагов — к муфтам, датчикам и автоматике.</p>
+                </div>
+              </article>
+            </div>
+            <aside class="visual visual--muted">
+              <img class="visual__image" src="assets/image/cover.webp" alt="Полный привод на бездорожье">
+              <span class="visual__tag">Общая база</span>
+            </aside>
+          </div>
+          <footer class="slide__number">02 / 10</footer>
+        </section>
+
+        <!-- СЛАЙД 3 : ТИПЫ СИСТЕМ -->
+        <section class="slide" data-slide-id="types" aria-label="Слайд 3: Три типа систем">
+          <header class="slide__header">
+            <p class="slide__kicker">Основа сравнения</p>
+            <h2 class="slide__title">Три типа систем</h2>
+            <p class="slide__sub">Вся эпоха укладывается в три схемы. Дальше каждая страна выбирала свою и доводила до совершенства.</p>
+          </header>
+          <div class="types">
+            <article class="type-card type-card--america">
+              <span class="type-card__num">ТИП 01</span>
+              <h3 class="type-card__title">Part-time</h3>
+              <div class="type-card__en">подключаемый</div>
+              <img class="type-card__diagram" src="assets/image/parttime-cutaway.webp" alt="Разрез раздаточной коробки part-time">
+              <p class="type-card__desc">Жёсткое подключение передней оси, без межосевого дифференциала. Только для бездорожья — на асфальте задний привод.</p>
+              <div class="type-card__badge">Честный механик</div>
+            </article>
+            <article class="type-card type-card--japan">
+              <span class="type-card__num">ТИП 02</span>
+              <h3 class="type-card__title">Full-time</h3>
+              <div class="type-card__en">постоянный</div>
+              <img class="type-card__diagram" src="assets/image/fulltime-cutaway.webp" alt="Разрез раздатки с межосевым дифференциалом">
+              <p class="type-card__desc">Межосевой дифференциал — езда всегда на четырёх. Блокировки подключаются для грязи.</p>
+              <div class="type-card__badge">Универсальность</div>
+            </article>
+            <article class="type-card type-card--korea">
+              <span class="type-card__num">ТИП 03</span>
+              <h3 class="type-card__title">AWD / муфты</h3>
+              <div class="type-card__en">автоматический</div>
+              <img class="type-card__diagram" src="assets/image/awd-cutaway.webp" alt="Разрез многодисковой муфты AWD">
+              <p class="type-card__desc">Автоматическое подключение оси, электроника и датчики. Для асфальта и лёгкого бездорожья.</p>
+              <div class="type-card__badge">Электроника</div>
+            </article>
+          </div>
+          <footer class="slide__number">03 / 10</footer>
+        </section>
+
+        <!-- СЛАЙД 4 : ЯПОНИЯ -->
+        <section class="slide" data-slide-id="japan" aria-label="Слайд 4: Япония — технологии">
+          <header class="slide__header">
+            <p class="slide__kicker">Школа 01 · Япония</p>
+            <h2 class="slide__title">Технологии</h2>
+            <p class="slide__sub">Япония не выбирала одну схему — она дала все. От рамных монстров с блокировками до первых кроссоверов с муфтами.</p>
+          </header>
+          <div class="slide__grid">
+            <div class="points">
+              <article class="point">
+                <span class="point__index">01</span>
+                <div class="point__text">
+                  <h3 class="point__title">Mitsubishi Super Select</h3>
+                  <p class="point__desc">Pajero: и постоянный привод, и жёсткое подключение, и понижайка — в одной раздатке.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">02</span>
+                <div class="point__text">
+                  <h3 class="point__title">Subaru Symmetrical AWD</h3>
+                  <p class="point__desc">Симметричная трансмиссия, вискомуфты, позже электроника и распределение момента.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">03</span>
+                <div class="point__text">
+                  <h3 class="point__title">Toyota</h3>
+                  <p class="point__desc">От честного механика Land Cruiser с блокировками до первых умных муфт RAV4.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">04</span>
+                <div class="point__text">
+                  <h3 class="point__title">И классика, и «ум»</h3>
+                  <p class="point__desc">Японцы дали и честный механик, и первые интеллектуальные системы.</p>
+                </div>
+              </article>
+            </div>
+            <aside class="visual visual--japan">
+              <img class="visual__image" src="assets/image/japan.webp" alt="Японский внедорожник">
+              <span class="visual__tag">Япония · технологии</span>
+            </aside>
+          </div>
+          <footer class="slide__number">04 / 10</footer>
+        </section>
+
+        <!-- СЛАЙД 5 : КОРЕЯ -->
+        <section class="slide" data-slide-id="korea" aria-label="Слайд 5: Корея — доступность">
+          <header class="slide__header">
+            <p class="slide__kicker">Школа 02 · Корея</p>
+            <h2 class="slide__title">Доступность</h2>
+            <p class="slide__sub">Корея взяла готовые решения и сделала их доступными. Полный привод перестал быть роскошью.</p>
+          </header>
+          <div class="slide__grid">
+            <div class="points">
+              <article class="point">
+                <span class="point__index">01</span>
+                <div class="point__text">
+                  <h3 class="point__title">Полный привод как опция</h3>
+                  <p class="point__desc">Hyundai, Kia, SsangYong: привод — практичная опция, а не философия марки.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">02</span>
+                <div class="point__text">
+                  <h3 class="point__title">Простые схемы</h3>
+                  <p class="point__desc">Муфты и электроника по образцу японцев — но проще и дешевле в производстве.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">03</span>
+                <div class="point__text">
+                  <h3 class="point__title">Догнали по схеме</h3>
+                  <p class="point__desc">По конструкции — почти как у лидеров, по цене — заметно доступнее.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">04</span>
+                <div class="point__text">
+                  <h3 class="point__title">Практичность</h3>
+                  <p class="point__desc">Важнее инженерии — чтобы работало и не стоило лишнего.</p>
+                </div>
+              </article>
+            </div>
+            <aside class="visual visual--korea">
+              <img class="visual__image" src="assets/image/korea.webp" alt="Корейский кроссовер">
+              <span class="visual__tag">Корея · доступность</span>
+            </aside>
+          </div>
+          <footer class="slide__number">05 / 10</footer>
+        </section>
+
+        <!-- СЛАЙД 6 : АМЕРИКА -->
+        <section class="slide" data-slide-id="america" aria-label="Слайд 6: Америка — проходимость">
+          <header class="slide__header">
+            <p class="slide__kicker">Школа 03 · Америка</p>
+            <h2 class="slide__title">Проходимость</h2>
+            <p class="slide__sub">Америка не гналась за асфальтом. Здесь полный привод — про то, чтобы выехать оттуда, куда другие не заедут.</p>
+          </header>
+          <div class="slide__grid">
+            <div class="points">
+              <article class="point">
+                <span class="point__index">01</span>
+                <div class="point__text">
+                  <h3 class="point__title">Рамные внедорожники</h3>
+                  <p class="point__desc">Jeep, Ford, Chevrolet: рама, мосты, минимум компромиссов.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">02</span>
+                <div class="point__text">
+                  <h3 class="point__title">Part-time и Dana</h3>
+                  <p class="point__desc">Жёсткое подключение, мосты Dana, понижающие ряды.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">03</span>
+                <div class="point__text">
+                  <h3 class="point__title">Жёсткие блокировки</h3>
+                  <p class="point__desc">Честные блокировки дифференциалов — для настоящей грязи.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">04</span>
+                <div class="point__text">
+                  <h3 class="point__title">Минимум электроники</h3>
+                  <p class="point__desc">Проходимость важнее поведения на асфальте.</p>
+                </div>
+              </article>
+            </div>
+            <aside class="visual visual--america">
+              <img class="visual__image" src="assets/image/america.webp" alt="Американский внедорожник">
+              <span class="visual__tag">Америка · проходимость</span>
+            </aside>
+          </div>
+          <footer class="slide__number">06 / 10</footer>
+        </section>
+
+        <!-- СЛАЙД 7 : ГЕРМАНИЯ -->
+        <section class="slide" data-slide-id="germany" aria-label="Слайд 7: Германия — комфорт и асфальт">
+          <header class="slide__header">
+            <p class="slide__kicker">Школа 04 · Германия</p>
+            <h2 class="slide__title">Комфорт и асфальт</h2>
+            <p class="slide__sub">Германия сделала полный привод незаметным. Он не про бездорожье — он про уверенность и комфорт на дороге.</p>
+          </header>
+          <div class="slide__grid">
+            <div class="points">
+              <article class="point">
+                <span class="point__index">01</span>
+                <div class="point__text">
+                  <h3 class="point__title">Audi quattro</h3>
+                  <p class="point__desc">Постоянный привод, межосевой дифференциал, позже Torsen.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">02</span>
+                <div class="point__text">
+                  <h3 class="point__title">Mercedes 4Matic</h3>
+                  <p class="point__desc">Электроника и распределение момента для плавности хода.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">03</span>
+                <div class="point__text">
+                  <h3 class="point__title">BMW xDrive</h3>
+                  <p class="point__desc">Активное распределение момента между осями в реальном времени.</p>
+                </div>
+              </article>
+              <article class="point">
+                <span class="point__index">04</span>
+                <div class="point__text">
+                  <h3 class="point__title">Про поведение</h3>
+                  <p class="point__desc">Полный привод как про управляемость, а не про грязь.</p>
+                </div>
+              </article>
+            </div>
+            <aside class="visual visual--germany">
+              <img class="visual__image" src="assets/image/germany.webp" alt="Немецкий кроссовер">
+              <span class="visual__tag">Германия · асфальт</span>
+            </aside>
+          </div>
+          <footer class="slide__number">07 / 10</footer>
+        </section>
+
+        <!-- СЛАЙД 8 : СРАВНЕНИЕ -->
+        <section class="slide" data-slide-id="compare" aria-label="Слайд 8: Каждый выбрал свой компромисс">
+          <header class="slide__header">
+            <p class="slide__kicker">Сравнение</p>
+            <h2 class="slide__title">Каждый выбрал свой компромисс</h2>
+            <p class="slide__sub">Четыре школы, четыре приоритета. Ни одна не лучше — каждая решала свою задачу.</p>
+          </header>
+          <div class="matrix">
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Школа</th>
+                  <th scope="col">Тип системы</th>
+                  <th scope="col">Приоритет</th>
+                  <th scope="col">Сильная сторона</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><span class="school"><span class="dot" style="background:var(--japan)"></span>Япония</span></td>
+                  <td><span class="strong">Full-time + муфты</span></td>
+                  <td>Технологии</td>
+                  <td><span class="muted">Универсальность</span></td>
+                </tr>
+                <tr>
+                  <td><span class="school"><span class="dot" style="background:var(--korea)"></span>Корея</span></td>
+                  <td><span class="strong">Муфты</span></td>
+                  <td>Цена</td>
+                  <td><span class="muted">Доступность</span></td>
+                </tr>
+                <tr>
+                  <td><span class="school"><span class="dot" style="background:var(--america)"></span>Америка</span></td>
+                  <td><span class="strong">Part-time</span></td>
+                  <td>Проходимость</td>
+                  <td><span class="muted">Надёжность в грязи</span></td>
+                </tr>
+                <tr>
+                  <td><span class="school"><span class="dot" style="background:var(--germany)"></span>Германия</span></td>
+                  <td><span class="strong">Full-time + электроника</span></td>
+                  <td>Асфальт</td>
+                  <td><span class="muted">Управляемость</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <footer class="slide__number">08 / 10</footer>
+        </section>
+
+        <!-- СЛАЙД 9 : ТРЕНД -->
+        <section class="slide" data-slide-id="trend" aria-label="Слайд 9: Механика уступает электронике">
+          <header class="slide__header">
+            <p class="slide__kicker">Тренд эпохи</p>
+            <h2 class="slide__title">Механика уступает электронике</h2>
+            <p class="slide__sub">За десять лет полный привод прошёл путь от рычагов и блокировок до электроники, которая решает за водителя.</p>
+          </header>
+          <div class="timeline">
+            <article class="timeline__item timeline__item--america">
+              <div class="timeline__year">середина 90-х</div>
+              <div class="timeline__body">
+                <h3 class="timeline__title">Честный механик</h3>
+                <p class="timeline__desc">Блокировки, понижайки, рычаги. Водитель решает сам.</p>
+              </div>
+            </article>
+            <article class="timeline__item timeline__item--japan">
+              <div class="timeline__year">рубеж 2000-х</div>
+              <div class="timeline__body">
+                <h3 class="timeline__title">Вискомуфты и имитации</h3>
+                <p class="timeline__desc">Первые электронные имитации блокировок, вискомуфты.</p>
+              </div>
+            </article>
+            <article class="timeline__item timeline__item--korea">
+              <div class="timeline__year">середина 2000-х</div>
+              <div class="timeline__body">
+                <h3 class="timeline__title">Умные муфты</h3>
+                <p class="timeline__desc">Датчики, распределение момента, проходимость «по кнопке».</p>
+              </div>
+            </article>
+            <article class="timeline__item timeline__item--germany">
+              <div class="timeline__year">итог</div>
+              <div class="timeline__body">
+                <h3 class="timeline__title">Меньше честного механика</h3>
+                <p class="timeline__desc">Электроника берёт на себя то, что раньше делал водитель.</p>
+              </div>
+            </article>
+          </div>
+          <footer class="slide__number">09 / 10</footer>
+        </section>
+
+        <!-- СЛАЙД 10 : ФИНАЛ -->
+        <section class="slide slide--final" data-slide-id="final" aria-label="Слайд 10: Ключевое сообщение">
+          <header class="slide__header">
+            <p class="slide__kicker slide__kicker--center">Ключевое сообщение</p>
+          </header>
+          <div class="slide__quote">Лучшей системы <span class="slide__quote-accent">нет</span> — есть компромисс</div>
+          <aside class="slide__tags" aria-label="Школы полного привода">
+            <span class="chip chip--japan">Япония · технологии</span>
+            <span class="chip chip--america">Америка · проходимость</span>
+            <span class="chip chip--germany">Германия · асфальт</span>
+            <span class="chip chip--korea">Корея · цена</span>
+          </aside>
+          <p class="slide__final-sub">Каждая школа отдала что-то, чтобы получить главное. Вопрос не в том, какая система лучше, а в том, что нужно вам.</p>
+          <footer class="slide__number">10 / 10</footer>
+        </section>
+
+      </div>
+    </div>
+
+    <!-- Управление презентацией -->
+    <footer class="controls">
+      <nav class="controls__nav" aria-label="Навигация по слайдам">
+        <button class="controls__button controls__button--prev" id="prev" aria-label="Предыдущий слайд">&#8592;</button>
+        <div class="controls__thumbs" id="thumbs" role="tablist" aria-label="Слайды"></div>
+        <div class="controls__counter" id="counter">1 / 10</div>
+        <button class="controls__button controls__button--next" id="next" aria-label="Следующий слайд">&#8594;</button>
+      </nav>
+    </footer>
+
+  </main>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

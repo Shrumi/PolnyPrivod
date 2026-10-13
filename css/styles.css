@@ -1,0 +1,709 @@
+/* ============================================================
+   Четыре школы полного привода — стили презентации
+   Методология: БЭМ (block__element--modifier)
+   Браузеры: Chrome, Safari, Firefox, Edge, iOS Safari, Android Chrome
+   ============================================================ */
+
+/* ---------- 1. Переменные и базовые настройки ---------- */
+:root {
+  --bg: #0b0e12;
+  --panel: #12161d;
+  --panel2: #171c25;
+  --line: #232a35;
+  --ink: #e8edf3;
+  --muted: #8b96a5;
+  --dim: #5c6673;
+  --grid: rgba(120, 140, 165, .07);
+  --japan: #ff5a4d;
+  --korea: #4d9fff;
+  --america: #ffb84d;
+  --germany: #c9d4e0;
+  --mono: ui-monospace, SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  --sans: system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--sans);
+  overflow: hidden;
+}
+
+/* ---------- 2. Сцена презентации ---------- */
+.presentation__stage {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(1200px 700px at 70% -10%, rgba(255, 184, 77, .05), transparent 60%),
+    radial-gradient(900px 600px at 10% 110%, rgba(77, 159, 255, .05), transparent 60%),
+    var(--bg);
+}
+
+.presentation__scene {
+  width: 1280px;
+  height: 720px;
+  flex: none;
+  position: relative;
+  transform-origin: center center;
+  background:
+    linear-gradient(var(--grid) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid) 1px, transparent 1px),
+    var(--panel);
+  background-size: 44px 44px;
+  border: 1px solid var(--line);
+  box-shadow: 0 40px 120px rgba(0, 0, 0, .6);
+  overflow: hidden;
+}
+
+/* ---------- 3. Слайды ---------- */
+.slide {
+  position: absolute;
+  inset: 0;
+  display: none;
+  padding: 30px 64px 56px 64px;
+  flex-direction: column;
+}
+
+.slide--active {
+  display: flex;
+}
+
+.slide__kicker {
+  font-family: var(--mono);
+  font-size: 17px;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.slide__kicker::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: currentColor;
+  opacity: .6;
+}
+
+.slide__kicker--center {
+  justify-content: center;
+}
+
+.slide__title {
+  font-size: 44px;
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -.02em;
+  margin-top: 12px;
+}
+
+.slide__sub {
+  font-size: 20px;
+  color: var(--muted);
+  margin-top: 8px;
+  max-width: 820px;
+  line-height: 1.4;
+}
+
+.slide__number {
+  position: absolute;
+  top: 26px;
+  right: 34px;
+  font-family: var(--mono);
+  font-size: 17px;
+  color: var(--dim);
+  letter-spacing: .1em;
+}
+
+/* ---------- 4. Обложка ---------- */
+.slide--cover {
+  padding: 0;
+}
+
+.slide__background {
+  position: absolute;
+  inset: 0;
+  background: url("../assets/image/cover.webp") center/cover no-repeat;
+}
+
+.slide__background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(11, 14, 18, .94) 0%, rgba(11, 14, 18, .72) 42%, rgba(11, 14, 18, .25) 100%),
+    linear-gradient(0deg, rgba(11, 14, 18, .85) 0%, transparent 55%);
+}
+
+.slide__cover-content {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 36px 64px 56px 64px;
+}
+
+.slide--cover .slide__kicker {
+  color: var(--america);
+}
+
+.slide--cover .slide__title {
+  font-size: 58px;
+  max-width: 900px;
+}
+
+.slide--cover .slide__sub {
+  max-width: 640px;
+}
+
+.slide__cover-meta {
+  margin-top: 16px;
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+/* ---------- 5. Чипы (метки) ---------- */
+.chip {
+  font-family: var(--mono);
+  font-size: 16px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  padding: 8px 14px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--muted);
+  background: rgba(11, 14, 18, .5);
+}
+
+.chip--japan {
+  color: var(--japan);
+  border-color: rgba(255, 90, 77, .4);
+}
+
+.chip--korea {
+  color: var(--korea);
+  border-color: rgba(77, 159, 255, .4);
+}
+
+.chip--america {
+  color: var(--america);
+  border-color: rgba(255, 184, 77, .4);
+}
+
+.chip--germany {
+  color: var(--germany);
+  border-color: rgba(201, 212, 224, .4);
+}
+
+/* ---------- 6. Сетка контента ---------- */
+.slide__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 36px;
+  margin-top: 16px;
+  flex: 1;
+  min-height: 0;
+}
+
+.points {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+}
+
+.point {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  padding: 10px 14px;
+  background: var(--panel2);
+  border: 1px solid var(--line);
+  border-radius: 12px;
+}
+
+.point__index {
+  font-family: var(--mono);
+  font-size: 17px;
+  color: var(--accent, var(--muted));
+  padding-top: 2px;
+  flex: none;
+}
+
+.point__title {
+  font-size: 19px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.point__desc {
+  font-size: 17px;
+  color: var(--muted);
+  line-height: 1.38;
+}
+
+/* ---------- 7. Визуал (иллюстрация) ---------- */
+.visual {
+  position: relative;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--line);
+  min-height: 0;
+}
+
+.visual__image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.visual::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, .04), inset 0 -80px 80px -40px rgba(0, 0, 0, .7);
+}
+
+.visual__tag {
+  position: absolute;
+  left: 16px;
+  bottom: 16px;
+  z-index: 2;
+  font-family: var(--mono);
+  font-size: 16px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--accent, var(--ink));
+  background: rgba(11, 14, 18, .72);
+  padding: 7px 12px;
+  border-radius: 8px;
+  border: 1px solid var(--line);
+}
+
+/* Модификаторы акцентного цвета визуала */
+.visual--muted { --accent: var(--muted); }
+.visual--japan { --accent: var(--japan); }
+.visual--korea { --accent: var(--korea); }
+.visual--america { --accent: var(--america); }
+.visual--germany { --accent: var(--germany); }
+
+/* ---------- 8. Типы систем (слайд 3) ---------- */
+.types {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 16px;
+  flex: 1;
+}
+
+.type-card {
+  background: var(--panel2);
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.type-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--accent, var(--muted));
+}
+
+.type-card__num {
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--accent, var(--muted));
+  letter-spacing: .2em;
+}
+
+.type-card__title {
+  font-size: 22px;
+  font-weight: 800;
+  margin: 7px 0 5px;
+}
+
+.type-card__en {
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--dim);
+  letter-spacing: .1em;
+  margin-bottom: 8px;
+}
+
+.type-card__desc {
+  font-size: 17.5px;
+  color: var(--muted);
+  line-height: 1.42;
+}
+
+.type-card__badge {
+  margin-top: auto;
+  padding-top: 10px;
+  font-family: var(--mono);
+  font-size: 16px;
+  color: var(--ink);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.type-card__badge::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent, var(--muted));
+}
+
+.type-card__diagram {
+  width: 100%;
+  height: 130px;
+  margin: 4px 0 10px;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  background: rgba(0, 0, 0, .28);
+  object-fit: cover;
+  display: block;
+}
+
+.type-card--america { --accent: var(--america); }
+.type-card--japan { --accent: var(--japan); }
+.type-card--korea { --accent: var(--korea); }
+
+/* ---------- 9. Сравнение (слайд 8) ---------- */
+.matrix {
+  margin-top: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.matrix table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 18.5px;
+}
+
+.matrix thead th {
+  text-align: left;
+  font-family: var(--mono);
+  font-size: 16px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding: 10px 16px;
+  border-bottom: 2px solid var(--line);
+  font-weight: 600;
+}
+
+.matrix tbody td {
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--line);
+  vertical-align: top;
+}
+
+.matrix tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.matrix tbody tr {
+  transition: background .2s;
+}
+
+.matrix tbody tr:hover {
+  background: rgba(255, 255, 255, .02);
+}
+
+.school {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-weight: 700;
+  font-size: 20px;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  flex: none;
+}
+
+.matrix td .muted {
+  color: var(--muted);
+  font-size: 18px;
+  line-height: 1.4;
+}
+
+.strong {
+  color: var(--ink);
+  font-weight: 600;
+}
+
+/* ---------- 10. Тренд (слайд 9) ---------- */
+.timeline {
+  margin-top: 16px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0;
+}
+
+.timeline__item {
+  display: grid;
+  grid-template-columns: 150px 1fr;
+  gap: 26px;
+  align-items: center;
+  position: relative;
+}
+
+.timeline__year {
+  font-family: var(--mono);
+  font-size: 21px;
+  font-weight: 700;
+  color: var(--accent, var(--muted));
+  text-align: right;
+}
+
+.timeline__body {
+  position: relative;
+  padding: 8px 0 8px 26px;
+  border-left: 2px solid var(--line);
+}
+
+.timeline__body::before {
+  content: "";
+  position: absolute;
+  left: -7px;
+  top: 50%;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--accent, var(--muted));
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 4px rgba(255, 255, 255, .04);
+}
+
+.timeline__title {
+  font-size: 21px;
+  font-weight: 700;
+  margin-bottom: 2px;
+}
+
+.timeline__desc {
+  font-size: 17.5px;
+  color: var(--muted);
+  line-height: 1.38;
+}
+
+.timeline__item--america { --accent: var(--america); }
+.timeline__item--japan { --accent: var(--japan); }
+.timeline__item--korea { --accent: var(--korea); }
+.timeline__item--germany { --accent: var(--germany); }
+
+/* ---------- 11. Финальный слайд ---------- */
+.slide--final {
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.slide__quote {
+  font-size: 46px;
+  font-weight: 800;
+  line-height: 1.12;
+  letter-spacing: -.02em;
+  max-width: 980px;
+}
+
+.slide__quote-accent {
+  color: var(--america);
+}
+
+.slide__tags {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 22px;
+}
+
+.slide__tags .chip {
+  font-size: 17px;
+}
+
+.slide__final-sub {
+  margin-top: 18px;
+  font-size: 20px;
+  color: var(--muted);
+  max-width: 760px;
+  line-height: 1.45;
+}
+
+/* ---------- 12. Управление ---------- */
+.controls {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 50;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  padding: 14px 20px;
+  background: linear-gradient(0deg, rgba(11, 14, 18, .92), rgba(11, 14, 18, .55) 80%, transparent);
+}
+
+.controls__button {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  border: 1px solid var(--line);
+  background: var(--panel2);
+  color: var(--ink);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all .15s;
+}
+
+.controls__button:hover:not(:disabled) {
+  border-color: var(--america);
+  color: var(--america);
+}
+
+.controls__button:disabled {
+  opacity: .3;
+  cursor: default;
+}
+
+.controls__button:focus-visible {
+  outline: 2px solid var(--america);
+  outline-offset: 2px;
+}
+
+.controls__counter {
+  font-family: var(--mono);
+  font-size: 13px;
+  color: var(--muted);
+  letter-spacing: .1em;
+  min-width: 70px;
+  text-align: center;
+}
+
+.controls__thumbs {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  max-width: 60vw;
+  padding: 4px;
+}
+
+.controls__thumb {
+  flex: none;
+  width: 74px;
+  height: 42px;
+  border-radius: 6px;
+  border: 1px solid var(--line);
+  background: var(--panel2);
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--muted);
+  text-align: center;
+  padding: 4px;
+  transition: all .15s;
+}
+
+.controls__thumb:hover {
+  border-color: var(--muted);
+}
+
+.controls__thumb--active {
+  border-color: var(--america);
+  color: var(--ink);
+  box-shadow: 0 0 0 1px var(--america);
+}
+
+.controls__thumb:focus-visible {
+  outline: 2px solid var(--america);
+  outline-offset: 2px;
+}
+
+/* ---------- 13. Анимации ---------- */
+.slide--active .slide__kicker { animation: rise .6s ease both; }
+.slide--active .slide__title { animation: rise .7s .08s ease both; }
+.slide--active .slide__sub { animation: rise .7s .16s ease both; }
+.slide--active .point,
+.slide--active .type-card,
+.slide--active .timeline__item,
+.slide--active tbody tr { animation: rise .6s ease both; }
+.slide--active .point:nth-child(1) { animation-delay: .1s; }
+.slide--active .point:nth-child(2) { animation-delay: .18s; }
+.slide--active .point:nth-child(3) { animation-delay: .26s; }
+.slide--active .point:nth-child(4) { animation-delay: .34s; }
+.slide--active .type-card:nth-child(1) { animation-delay: .1s; }
+.slide--active .type-card:nth-child(2) { animation-delay: .2s; }
+.slide--active .type-card:nth-child(3) { animation-delay: .3s; }
+.slide--active .timeline__item:nth-child(1) { animation-delay: .1s; }
+.slide--active .timeline__item:nth-child(2) { animation-delay: .2s; }
+.slide--active .timeline__item:nth-child(3) { animation-delay: .3s; }
+.slide--active .timeline__item:nth-child(4) { animation-delay: .4s; }
+.slide--active .slide__quote { animation: rise .7s ease both; }
+.slide--active .slide__tags { animation: rise .7s .15s ease both; }
+.slide--active .slide__final-sub { animation: rise .7s .25s ease both; }
+.slide--active .visual { animation: zoom .8s ease both; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(22px); }
+  to { opacity: 1; transform: none; }
+}
+
+@keyframes zoom {
+  from { opacity: 0; transform: scale(1.04); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------- 14. Доступность: снижение движения ---------- */
+@media (prefers-reduced-motion: reduce) {
+  .slide--active * {
+    animation: none !important;
+  }
+}

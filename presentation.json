@@ -1,0 +1,32 @@
+{
+  "version": 1,
+  "title": "Четыре школы полного привода",
+  "workspaceId": "ws_f604eafa1417",
+  "sessionId": "ses_eed82ef11ffec7iqyHmdp8VWpB",
+  "entry": "index.html",
+  "slideCount": 10,
+  "lastSuccessfulUpdate": "2026-10-10T21:09:20.227Z",
+  "aspectRatio": "16:9",
+  "slides": [
+    { "id": "cover", "title": "Четыре школы полного привода", "order": 1 },
+    { "id": "common", "title": "Одна задача — четыре решения", "order": 2 },
+    { "id": "types", "title": "Три типа систем", "order": 3 },
+    { "id": "japan", "title": "Технологии", "order": 4 },
+    { "id": "korea", "title": "Доступность", "order": 5 },
+    { "id": "america", "title": "Проходимость", "order": 6 },
+    { "id": "germany", "title": "Комфорт и асфальт", "order": 7 },
+    { "id": "compare", "title": "Каждый выбрал свой компромисс", "order": 8 },
+    { "id": "trend", "title": "Механика уступает электронике", "order": 9 },
+    { "id": "final", "title": "Лучшей системы нет — есть компромисс", "order": 10 }
+  ],
+  "assets": [
+    "assets/image/cover.webp",
+    "assets/image/japan.webp",
+    "assets/image/korea.webp",
+    "assets/image/america.webp",
+    "assets/image/germany.webp",
+    "assets/image/parttime-cutaway.webp",
+    "assets/image/fulltime-cutaway.webp",
+    "assets/image/awd-cutaway.webp"
+  ]
+}

@@ -24,7 +24,7 @@
   function scaleScene() {
     var w = window.innerWidth;
     var h = window.innerHeight;
-    var scale = Math.min(w / 1280, h / 720);
+    var scale = Math.min(w / 1280, h / 670);
     scene.style.transform = 'scale(' + scale + ')';
   }
 

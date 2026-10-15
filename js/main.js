@@ -75,12 +75,29 @@
     goTo(current + 1);
   });
 
-  // Управление с клавиатуры
+  // Управление с клавиатуры: стрелки, пробел, PageUp/PageDown, Home/End.
+  // Пробел и стрелки не скроллят страницу — презентация занимает весь экран.
   document.addEventListener('keydown', function (event) {
-    if (event.key === 'ArrowRight') goTo(current + 1);
-    else if (event.key === 'ArrowLeft') goTo(current - 1);
-    else if (event.key === 'Home') goTo(0);
-    else if (event.key === 'End') goTo(total - 1);
+    switch (event.key) {
+      case 'ArrowRight':
+      case 'PageDown':
+      case ' ': /* Space */
+        event.preventDefault();
+        goTo(current + 1);
+        break;
+      case 'ArrowLeft':
+      case 'PageUp':
+        goTo(current - 1);
+        break;
+      case 'Home':
+        event.preventDefault();
+        goTo(0);
+        break;
+      case 'End':
+        event.preventDefault();
+        goTo(total - 1);
+        break;
+    }
   });
 
   // Инициализация
